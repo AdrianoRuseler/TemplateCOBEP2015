@@ -60,8 +60,13 @@
 
 
 
-\documentclass[a4paper,oneside,onecolumn,draft,12pt]{IEEEtran}
-
+% \documentclass[a4paper,oneside,onecolumn,draft,12pt,conference]{IEEEtran}
+% \documentclass[a4paper,oneside,onecolumn,draftcls,12pt,conference]{IEEEtran}
+%\documentclass[a4paper,oneside,onecolumn,draftclsnofoot,12pt,conference]{IEEEtran} 
+\documentclass[letterpaper,oneside,onecolumn,draftclsnofoot,12pt,conference]{IEEEtran}  
+ 
+ 
+ 
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
@@ -396,6 +401,9 @@ The Brazilian Power Electronics Conference -- COBEP is a conference held every o
 
 % no keywords
 
+%\begin{IEEEkeywords}
+%	Broad band networks, quality of service, WDM.
+%\end{IEEEkeywords}
 
 
 
@@ -583,6 +591,117 @@ Prof. Paulo Peixoto Praça (Treasurer)
 
 
 
+\section{Some Latex Test}
+
+ 
+ \subsection{Equations}
+ \begin{equation}
+ \Delta I_{L}=I_{o}+\frac{\sqrt{3}}{2}.\frac{V_{i}}{Z}
+ \end{equation}
+ Where:
+ 
+ \begin{enumerate}
+ 	\item[$\Delta I_{L}$]  - Peak value of resonant current.
+ 	\item[$I_{o}$]  - Load current.
+ 	\item[$V_{i}$]  - Input voltage.
+ 	\item[$Z$]  - Characteristic impedance of the resonant circuit.
+ \end{enumerate}
+ 
+  \begin{equation} \label{eq:ix12}
+  {i_{{x_{12}}}}\left( \theta  \right) = \frac{{{m_o}}}{2}\left[ {{I_1}\cos \left( {{\theta _1}} \right) - {I_2}\cos \left( {{\theta _2}} \right)} \right]
+  + \frac{{{m_o}{I_2}}}{2}\cos \left( {2\theta  + {\theta _2}} \right) - \frac{{{m_o}{I_1}}}{2}\cos \left( {2\theta  + {\theta _1}} \right).	
+  \end{equation}
+  
+  
+ \subsection{Figures}
+ 
+ \begin{figure}[!h]
+ 	\centering
+ 	\begin{minipage}[b]{0.45\textwidth}	\centering
+ 		\includegraphics[width=0.75\textwidth]{Figs/MHF1F_ix.eps}
+ 		\caption{Equivalent circuit used to analyze the capacitor voltage for two sub-modules.}
+ 		\label{fig:MHF1F_ix}
+ 	\end{minipage}
+ 	\quad
+ 	\begin{minipage}[b]{0.45\textwidth} 	\centering
+ 		\includegraphics[width=0.8\linewidth]{Figs/MagneticCircuit}
+ 		\caption{Magnetic circuit implemented in the software PSIM.}
+ 		\label{fig:MagneticCircuit}
+ 	\end{minipage}
+ \end{figure}
+ 
+ 
+ 
+
+  \subsection{Tables}
+ 
+ 
+ \begin{table}[ht]
+ 	\centering
+ 	\begin{minipage}[b]{0.45\textwidth}	
+ 		\caption{Prototype Values.}
+ 		\label{tab:PrototypeDetails}
+ 		\centering
+ 		\resizebox{\textwidth}{!}{%
+ 			\begin{tabular}{c|c|c} \toprule
+ 				\textbf{Parameter}& \textbf{Value} & \textbf{Description} \\ \midrule
+ 				$P_{k}$ & 2 kW & Output rated power per sub--module\\
+ 				$V_k$ & 220 V & Output rated voltage per sub--module\\
+ 				$V_{in}$   & 1200 V & Input dc bus voltage  \\ 
+ 				$f_s$   & 19980 Hz & Switching frequency \\ 
+ 				$f_o$   & 60 Hz & Fundamental frequency\\ 
+ 				$C_k$   & 1020 $\mu$F & Bus capacitor capacitance \\ 
+ 				$L_k$   & 1 mH & Filtering inductance \\
+ 				$n_k$   & 1:1:1:1 & Transformer transformation ratio per phase  \\ 
+ 				$k$& 3& Number of inverters per phase (sub--modules) \\ 
+ 				$R_0$   & 8 $\Omega$ & Load resistance \\ 
+ 				$C_0$   & 15 $\mu$F & Load capacitance \\ 
+ 				$L_0$   & 5 mH & Load inductance \\
+ 				\bottomrule
+ 			\end{tabular}}
+ 		\end{minipage}
+ 		\quad
+ 		\begin{minipage}[b]{0.45\textwidth} 
+ 			\caption{Simulation RMS values with applied parameters.}
+ 			\label{tab:SimulationResults}
+ 			\centering
+ 			\resizebox{\textwidth}{!}{%
+ 				\begin{tabular}{cc|cc|cc} \toprule 
+ 					\multicolumn{2}{l}{\textbf{Phase A} } & \multicolumn{2}{l}{\textbf{Phase B}} 
+ 					& \multicolumn{2}{l}{\textbf{Phase C}} \\ \hline
+ 					Parameter       & Value       & Parameter        & Value        & Parameter         & Value            \\\hline
+ 					$I_{La1}$&$\SI{9.0145887e+000}{\A}$&  $I_{Lb1}$&$\SI{9.9448656e+000}{\A}$& $I_{Lc1}$&$\SI{9.1877882e+000}{\A}$ \\
+ 					$I_{La2}$&$\SI{8.9496558e+000}{\A}$&  $I_{Lb2}$&$\SI{9.8979341e+000}{\A}$& $I_{Lc2}$&$\SI{9.0625976e+000}{\A}$ \\
+ 					$I_{La3}$&$\SI{8.9564445e+000}{\A}$&  $I_{Lb3}$&$\SI{9.8901011e+000}{\A}$& $I_{Lc3}$&$\SI{9.0550971e+000}{\A}$ \\
+ 					$P_{a1}$& $\SI{2017.5626e+000}{\W}$&  $P_{b1}$& $\SI{2200.6884e+000}{\W}$& $P_{c1}$& $\SI{2017.7425e+000}{\W}$ \\
+ 					$P_{a2}$& $\SI{2015.9731e+000}{\W}$&  $P_{b2}$& $\SI{2199.8454e+000}{\W}$& $P_{c2}$& $\SI{2014.4103e+000}{\W}$ \\
+ 					$P_{a3}$& $\SI{2015.8540e+000}{\W}$&  $P_{b3}$& $\SI{2199.2212e+000}{\W}$& $P_{c3}$& $\SI{2013.9296e+000}{\W}$ \\
+ 					$Q_{a1}$& $\SI{524.74548e+000}{\VA}$&  $Q_{b1}$& $\SI{615.93981e+000}{\VA}$& $Q_{c1}$& $\SI{679.69434e+000}{\VA}$ \\
+ 					$Q_{a2}$& $\SI{452.40163e+000}{\VA}$&  $Q_{b2}$& $\SI{579.60158e+000}{\VA}$& $Q_{c2}$& $\SI{573.18841e+000}{\VA}$ \\
+ 					$Q_{a3}$& $\SI{458.56979e+000}{\VA}$&  $Q_{b3}$& $\SI{568.68134e+000}{\VA}$& $Q_{c3}$& $\SI{562.90249e+000}{\VA}$ \\
+ 					$V_{Ca1}$&$\SI{400.30184e+000}{\V}$&  $V_{Cb1}$&$\SI{400.21506e+000}{\V}$& $V_{Cc1}$&$\SI{400.56338e+000}{\V}$ \\
+ 					$V_{Ca2}$&$\SI{399.83914e+000}{\V}$&  $V_{Cb2}$&$\SI{400.04345e+000}{\V}$& $V_{Cc2}$&$\SI{399.84252e+000}{\V}$ \\
+ 					$V_{Ca3}$&$\SI{399.85999e+000}{\V}$&  $V_{Cb3}$&$\SI{399.74261e+000}{\V}$& $V_{Cc3}$&$\SI{399.59499e+000}{\V}$ \\
+ 					$I_{Ca1}$&$\SI{3.5236129e+000}{\A}$&  $I_{Cb1}$&$\SI{3.8862845e+000}{\A}$& $I_{Cc1}$&$\SI{3.5822843e+000}{\A}$ \\
+ 					$I_{Ca2}$&$\SI{3.5151951e+000}{\A}$&  $I_{Cb2}$&$\SI{3.8834127e+000}{\A}$& $I_{Cc2}$&$\SI{3.5612719e+000}{\A}$ \\
+ 					$I_{Ca3}$&$\SI{3.5107804e+000}{\A}$&  $I_{Cb3}$&$\SI{3.8751641e+000}{\A}$& $I_{Cc3}$&$\SI{3.5525851e+000}{\A}$ \\
+ 					\bottomrule                                                                                          
+ 				\end{tabular}}
+ 			\end{minipage}
+ 		\end{table}
+ 		
+ 		
+ 		
+
+\section{CONCLUSION}
+A conclusion might elaborate on the importance of the work or suggest
+applications and extensions. Clearly indicate advantages, limitations and
+possible applications.
+
+%\section*{ACKNOWLEDGEMENT}
+%A brief acknowledgement section may be included here.
+ 		
+ 
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
 % adjust value as needed - may need to be readjusted if
