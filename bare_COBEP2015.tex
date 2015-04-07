@@ -1,4 +1,9 @@
 
+%% This template is an adaption from the original IEEE conference class
+%% (bare_conf.tex  V1.4a) by Michael Shell.
+
+%%*************************************************************************
+%% Comments from the original author:
 %% bare_conf.tex
 %% V1.4a
 %% 2014/09/17
@@ -56,16 +61,6 @@
 
 
 \documentclass[a4paper,oneside,onecolumn,draft,12pt]{IEEEtran}
-% Some Computer Society conferences also require the compsoc mode option,
-% but others use the standard conference format.
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
-
-
-
-
 
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
@@ -120,7 +115,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+   \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -163,7 +158,7 @@
 
 % *** MATH PACKAGES ***
 %
-%\usepackage[cmex10]{amsmath}
+\usepackage[cmex10]{amsmath}
 % A popular package from the American Mathematical Society that provides
 % many useful and powerful commands for dealing with mathematics. If using
 % it, be sure to load this package with the cmex10 option to ensure that
@@ -186,7 +181,7 @@
 
 % *** SPECIALIZED LIST PACKAGES ***
 %
-%\usepackage{algorithmic}
+\usepackage{algorithmic}
 % algorithmic.sty was written by Peter Williams and Rogerio Brito.
 % This package provides an algorithmic environment fo describing algorithms.
 % You can use the algorithmic environment in-text or within a figure
@@ -208,7 +203,7 @@
 
 % *** ALIGNMENT PACKAGES ***
 %
-%\usepackage{array}
+\usepackage{array}
 % Frank Mittelbach's and David Carlisle's array.sty patches and improves
 % the standard LaTeX2e array and tabular environments to provide better
 % appearance and additional user controls. As the default LaTeX2e table
@@ -228,11 +223,11 @@
 
 
 % *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
+\ifCLASSOPTIONcompsoc
+  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+  \usepackage[caption=false,font=footnotesize]{subfig}
+\fi
 % subfig.sty, written by Steven Douglas Cochran, is the modern replacement
 % for subfigure.sty, the latter of which is no longer maintained and is
 % incompatible with some LaTeX packages including fixltx2e. However,
@@ -305,13 +300,31 @@
 % Basically, \url{my_url_here}.
 
 
-
-
 % *** Do not adjust lengths that control margins, column widths, etc. ***
 % *** Do not use packages that alter fonts (such as pslatex).         ***
 % There should be no need to do such things with IEEEtran.cls V1.6 and later.
 % (Unless specifically asked to do so by the journal or conference you plan
 % to submit to, of course. )
+
+
+% *** YOU STILL MAY ADD NEW PACKAGES ***
+% Be careful including new packages that can handle with caption
+% or change the default layout.
+
+\usepackage{float}
+\usepackage{booktabs}
+
+\usepackage[utf8]{inputenc}	 % Document Encoding (automatic conversion of accents)
+\usepackage{cite}      % Written by Donald Arseneau         
+\usepackage{epstopdf}
+
+\usepackage{datetime}
+
+\usepackage{siunitx}
+\sisetup{detect-all}
+\sisetup{round-mode=places,round-precision=2}
+\DeclareSIUnit \VA {VA} %apparent power
+
 
 
 % correct bad hyphenation here
@@ -326,7 +339,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Bare Demo of IEEEtran.cls for COBEP 2015}
+\title{Bare Demo of IEEEtran.cls \cite{IEEEhowto:IEEEtranpage} for COBEP 2015 digest}
 
 
 % author names and affiliations
@@ -372,21 +385,13 @@
 %\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
 
 
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
-
-
 % make the title area
 \maketitle
 
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-The Brazilian Power Electronics Conference -­‐ COBEP is a conference held every odd year in Brazil, since 1991, supported by the Brazilian Power Electronics Society -­‐ SOBRAEP. Due to high technical and scientific levels COBEP has long been technically sponsored by the IEEE. For 2015 we are pleased to introduce the ﬁrst IEEE Southern Power Electronic Conference – SPEC along with COBEP in a unique event of power electronics in the Southern hemisphere.
+The Brazilian Power Electronics Conference -- COBEP is a conference held every odd year in Brazil, since 1991, supported by the Brazilian Power Electronics Society -- SOBRAEP. Due to high technical and scientific levels COBEP has long been technically sponsored by the IEEE. For 2015 we are pleased to introduce the first IEEE Southern Power Electronic Conference -- SPEC along with COBEP in a unique event of power electronics in the Southern hemisphere.
 \end{abstract}
 
 % no keywords
@@ -410,7 +415,8 @@ The Brazilian Power Electronics Conference -­‐ COBEP is a conference held eve
 % no \IEEEPARstart
 
 The conference covers the fields of interest of the power electronics community, providing a forum for sharing theoretical and practical developments related to power electronics, featuring strong participation of industry and academia.
-The main topics of the conference include
+The main topics of the conference include.
+
 
 \begin{enumerate}
 \item	Power converters topologies and design;
@@ -428,12 +434,12 @@ The main topics of the conference include
 
 \section{The Venue}
 
-Fortaleza is a costal city in the Northeast of Brazil, in Ceará State, with 300 days of sunshine per Year, an average annual temperature around 27ºC (80ºF) and beaches with warm water. A constant and pleasant wind makes the place ideal for sports like windsurf and surf, as well as to produce electricity from wind parks. Fortaleza has many attractions that you can discover them just being there.
+Fortaleza is a seaside town in the Northeast of Brazil, in Ceará State, with 300 days of sunshine per year, an average annual temperature around 27 C (80 F) and beaches with warm water. A constant and pleasant wind makes the place ideal for sports like windsurf and surf, as well as to produce electricity from wind parks. Fortaleza has many attractions that you can discover them just being there.
 
 
 
 \subsubsection{The conference will be held at}
-Ponta Mar Hotel (\url{http://www.praiacentro.com.br}) 740 Av. Monsenhor Tabosa – Fortaleza -­‐ CE -­‐ Brazil
+Ponta Mar Hotel (\url{http://www.praiacentro.com.br}) 740 Av. Monsenhor Tabosa -- Fortaleza -- CE -- Brazil
 
 \section{Paper Submission Guideline and Format}
 
@@ -567,7 +573,7 @@ Notification of Acceptance:     Jul. 29, 2015 Final Version:	Aug. 28, 2015
 
 Prof. Fernando Luiz Marcelo Antunes, (General Chair)  
  
-Prof. Luiz Henrique Silva Colado Barreto (General co-­‐Chair) 
+Prof. Luiz Henrique Silva Colado Barreto (General co--Chair) 
 
 Prof. Demercil de Sousa Oliveira Junior, (Programme Chair)
 
@@ -592,20 +598,22 @@ Prof. Paulo Peixoto Praça (Treasurer)
 % http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
 % The IEEEtran BibTeX style support page is at:
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
+
+
+\bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
+\bibliography{IEEEabrv,IEEEexample}
 %
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
+%\begin{thebibliography}{1}
+%
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%
+%\end{thebibliography}
 
 
 
