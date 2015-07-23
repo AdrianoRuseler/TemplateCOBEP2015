@@ -61,9 +61,10 @@
 
 
 % \documentclass[a4paper,oneside,onecolumn,draft,12pt,conference]{IEEEtran}
-% \documentclass[a4paper,oneside,onecolumn,draftcls,12pt,conference]{IEEEtran}
+\documentclass[a4paper,oneside,onecolumn,draftcls,12pt,conference]{IEEEtran}
 %\documentclass[a4paper,oneside,onecolumn,draftclsnofoot,12pt,conference]{IEEEtran} 
-\documentclass[letterpaper,oneside,onecolumn,draftclsnofoot,12pt,conference]{IEEEtran}  
+%\documentclass[letterpaper,oneside,onecolumn,draftclsnofoot,12pt,conference]{IEEEtran}  
+ 
  
  
  
@@ -89,6 +90,7 @@
 % When switching from latex to pdflatex and vice-versa, the compiler may
 % have to be run twice to clear warning/error messages.
 
+%\usepackage{IEEEtrantools}
 
 
 % *** CITATION PACKAGES ***
@@ -328,6 +330,7 @@
 \DeclareSIUnit \VA {VA} %apparent power
 
 \usepackage{wrapfig} % Al­lows fig­ures or ta­bles to have text wrapped around them
+
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -639,6 +642,23 @@ Prof. Paulo Peixoto Praça (Treasurer)
   + \frac{{{m_o}{I_2}}}{2}\cos \left( {2\theta  + {\theta _2}} \right) - \frac{{{m_o}{I_1}}}{2}\cos \left( {2\theta  + {\theta _1}} \right).	
   \end{equation}
   
+  	\begin{eqnarray}
+  		{v_{ds}} &=& {R_s}{i_{ds}} + \frac{{d{\psi _{ds}}}}{{dt}} - {\omega _a}{\psi _{qs}}\\
+  		{v_{qs}} &=& {R_s}{i_{qs}} + \frac{{d{\psi _{qs}}}}{{dt}} - {\omega _a}{\psi _{ds}}\\
+  		{v_{dr}} = 0 &=& {R_r}{i_{qs}} + \frac{{d{\psi _{dr}}}}{{dt}} - \left( {{\omega _a} - \omega } \right){\psi _{qr}}\\
+  		{v_{qr}} = 0 &= &{R_r}{i_{qr}} + \frac{{d{\psi _{qr}}}}{{dt}} - \left( {{\omega _a} - \omega } \right){\psi _{dr}}
+  	\end{eqnarray}
+  	
+  	
+  	\begin{eqnarray}
+  		{v_{xks}} &=& {R_s}{i_{xks}} + \frac{{d{\psi _{xks}}}}{{dt}}\\
+  		{v_{yks}} &=& {R_s}{i_{yks}} + \frac{{d{\psi _{yks}}}}{{dt}}\\	
+  		{v_{0s}} &=& {R_s}{i_{0s}} + \frac{{d{\psi _{0s}}}}{{dt}}\\
+  		{\psi _{0s}} &=& {L_{ls}}{i_{0s}}
+  	\end{eqnarray}
+  	
+  
+
   
  \subsection{Figures}
  
@@ -656,6 +676,33 @@ Prof. Paulo Peixoto Praça (Treasurer)
  		\label{fig:MagneticCircuit}
  	\end{minipage}
  \end{figure}
+ 
+
+\begin{minipage}[b]{0.55\textwidth}
+	 \begin{eqnarray}
+         {v_{ds}} &=& {R_s}{i_{ds}} + \frac{{d{\psi _{ds}}}}{{dt}} - {\omega _a}{\psi _{qs}}\\
+         {v_{qs}} &=& {R_s}{i_{qs}} + \frac{{d{\psi _{qs}}}}{{dt}} - {\omega _a}{\psi _{ds}}\\
+         {v_{dr}} = 0 &=& {R_r}{i_{qs}} + \frac{{d{\psi _{dr}}}}{{dt}} - \left( {{\omega _a} - \omega } \right){\psi _{qr}}\\
+         {v_{qr}} = 0 &= &{R_r}{i_{qr}} + \frac{{d{\psi _{qr}}}}{{dt}} - \left( {{\omega _a} - \omega } \right){\psi _{dr}}
+ \end{eqnarray}
+\end{minipage}
+\quad
+\begin{minipage}[b]{0.35\textwidth} 
+	 \begin{eqnarray}
+	{v_{xks}} &=& {R_s}{i_{xks}} + \frac{{d{\psi _{xks}}}}{{dt}}\\
+	{v_{yks}} &=& {R_s}{i_{yks}} + \frac{{d{\psi _{yks}}}}{{dt}}\\	
+	{v_{0s}} &=& {R_s}{i_{0s}} + \frac{{d{\psi _{0s}}}}{{dt}}\\
+	{\psi _{0s}} &=& {L_{ls}}{i_{0s}}
+	\end{eqnarray}
+\end{minipage}    		
+
+  	
+  	
+ 
+ 
+ 
+ 
+ 
  
  
  

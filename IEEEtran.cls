@@ -4273,8 +4273,8 @@ between column types.}%
 \def\@oddfoot{}\def\@evenfoot{}%
 \ifCLASSOPTIONdraftcls
    \ifCLASSOPTIONdraftclsnofoot\else
-      \def\@oddfoot{\scriptsize \@date\hfil DRAFT}%
-      \def\@evenfoot{\scriptsize DRAFT\hfil \@date}%
+      \def\@oddfoot{\scriptsize \@date\hfil Digest}%
+      \def\@evenfoot{\scriptsize Digest\hfil \@date}%
    \fi
 \else
    % non-draft mode footers
