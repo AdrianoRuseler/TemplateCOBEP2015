@@ -39,7 +39,7 @@
 \RequirePackage{ifthen}
 \RequirePackage{setspace}
 \RequirePackage{fancyhdr}
-\RequirePackage[latin1]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{graphicx}
 \RequirePackage{float}
@@ -136,7 +136,7 @@
 	{\large\@author}
 	\vskip 9mm}
 
-\def\englishtitle{ {\centering\large\bf\@title\par} \medskip\medskip }
+\def\englishtitle{ {\centering\large\bf\@title \par} \medskip\medskip }
 
 %footnote rule
 \renewcommand\footnoterule{\noindent\rule{5.075cm}{0.85pt}\vskip 6pt}
