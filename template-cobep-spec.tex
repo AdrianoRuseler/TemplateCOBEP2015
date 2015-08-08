@@ -175,19 +175,6 @@ Regarding books, following the name of the authors (initials followed by last na
 At the end of these guidelines, there is an example of how the references should be inserted~\cite{refbib1,refbib2,refbib3,refbib4,refbib5,refbib6,refbib7,refbib8}.
 
 
-
-
-%\nocite{refbib1}
-%\nocite{refbib2}
-%\nocite{refbib3}
-%\nocite{refbib4}
-%\nocite{refbib5}
-%\nocite{refbib6}
-%\nocite{refbib7}
-%\nocite{refbib8}
-
-
-
 \subsubsection{Biographies}
 
 The biographies of the authors should appear in the same order as in the beginning of the paper and should basically contain the following items:
@@ -262,6 +249,66 @@ where:
 \symboldescription{$I_o$}{load current;}
 \symboldescription{$V_i$}{source voltage;}
 \symboldescription{$Z$}{characteristic impedance.}
+
+
+
+\begin{figure*}[!t]
+	% ensure that we have normalsize text
+	\normalsize
+	
+	\begin{equation}\label{eq:sys3matrix}
+	\left[ {\begin{array}{*{20}{c}}
+		{{n_1V_1}}\\
+		{{n_2V_2}}\\
+		{{n_3V_3}}
+		\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+		{j{X_1} + j{X_0} + \left( {{R_1} + {R_0}} \right)}&{j{X_0} + {R_0}}&{j{X_0} + {R_0}}\\
+		{j{X_0} + {R_0}}&{j{X_2} + j{X_0} + \left( {{R_2} + {R_0}} \right)}&{j{X_0} + {R_0}}\\
+		{j{X_0} + {R_0}}&{j{X_0} + {R_0}}&{j{X_3} + j{X_0} + \left( {{R_3} + {R_0}} \right)}
+		\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+		{{i_R} + j{i_{1X}}}\\
+		{{i_R} + j{i_{2X}}}\\
+		{{i_R} + j{i_{3X}}}
+		\end{array}} \right]
+	\end{equation}
+	
+	
+	\begin{equation}\label{eq:sys3matrixSol}
+	\underbrace {\left[ {\begin{array}{*{20}{c}}
+			0\\
+			0\\
+			0\\
+			0\\
+			0\\
+			0\\
+			{{m_o}{V_{in}}}
+			\end{array}} \right]}_{{{\bf{B}}_{\bf{3}}}} = \underbrace {\left[ {\begin{array}{*{20}{c}}
+			{\left( {3{\mkern 1mu} {R_0} + {R_1}} \right)}&{ - \left( {{X_0} + {X_1}} \right)}&{ - {X_0}}&{ - {X_0}}&{ - {n_1}}&0&0\\
+			{\left( {3{\mkern 1mu} {X_0} + {X_1}} \right)}&{\left( {{R_0} + {R_1}} \right)}&{{R_0}}&{{R_0}}&0&0&0\\
+			{\left( {3{\mkern 1mu} {R_0} + {R_2}} \right)}&{ - {X_0}}&{ - \left( {{X_2} + {X_0}} \right)}&{ - {X_0}}&0&{ - {n_2}}&0\\
+			{\left( {3{\mkern 1mu} {X_0} + {X_2}} \right)}&{{R_0}}&{\left( {{R_0} + {R_2}} \right)}&{{R_0}}&0&0&0\\
+			{\left( {3{\mkern 1mu} {R_0} + {R_3}} \right)}&{ - {X_0}}&{ - {X_0}}&{ - \left( {{X_3} + {X_0}} \right)}&0&0&{ - {n_3}}\\
+			{\left( {3{\mkern 1mu} {X_0} + {X_3}} \right)}&{{R_0}}&{{\mkern 1mu} {R_0}}&{{\mkern 1mu} \left( {{R_0} + {R_3}} \right)}&0&0&0\\
+			0&0&0&0&{{n_1}}&{{n_2}}&{{n_3}}
+			\end{array}} \right]}_{{{\bf{A}}_{\bf{3}}}}\underbrace {\left[ {\begin{array}{*{20}{c}}
+			{{i_R}}\\
+			{{i_{1X}}}\\
+			{{i_{2X}}}\\
+			{{i_{3X}}}\\
+			{{V_1}}\\
+			{{V_2}}\\
+			{{V_3}}
+			\end{array}} \right]}_{{{\bf{x}}_{\bf{3}}}}
+	\end{equation}
+	
+	
+	% Restore the current equation number.
+	%\setcounter{equation}{\value{mytempeqncnt}}
+	% IEEE uses as a separator
+	\hrulefill
+	% The spacer can be tweaked to stop underfull vboxes.
+	%	\vspace*{4pt}
+\end{figure*}
 
 
 \section{CONCLUSIONS}
