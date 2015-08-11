@@ -124,14 +124,14 @@
 \renewcommand\subsubsection[1]{\@startsection{subsubsection}{3}{4mm}{-2.5ex plus
 								       -1ex minus-.2ex}{-0.6ex}{\it\raggedright}{#1:}}
 
-\def\maketitle{\par %
+\def\maketitle{\par % \MakeUppercase 
 	\begingroup %
 		\twocolumn[\@maketitle]
-	\endgroup %
+	\endgroup %   
 	\let\maketitle\relax \let\@maketitle\relax
 } %
 \def\@maketitle{ \centering
-	{\Large \bf \ifnum \configlanguage = 1 \@title 	\else  \@portuguesetitle \fi  \par} 
+	{\Large \bf  \ifnum \configlanguage = 1 \@title	\else  \@portuguesetitle \fi  \par} 
 	\vskip 16.75pt
 	{\large\@author}
 	\vskip 9mm}
