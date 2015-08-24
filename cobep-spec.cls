@@ -48,6 +48,7 @@
 \RequirePackage{indentfirst}
 \RequirePackage{caption}
 \RequirePackage{fancybox}
+\RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage{color}
 \RequirePackage{amssymb}
@@ -101,6 +102,7 @@
 		        ignoreheadfoot}%
 
 \newcommand{\titulo}[1]{\gdef\@portuguesetitle{#1}} %
+
 
 %Resumos e Abstract
 \newenvironment{resumo}{\noindent\hspace*{4mm}\normalsize{\bf{\em Resumo --}}\normalsize\bf}{\par\rm\small\medskip\medskip}
@@ -157,8 +159,25 @@
 \addto\captionsenglish{\renewcommand{\refname}{REFERENCES}}
 \addto\captionsbrazil{\renewcommand{\refname}{REFERÊNCIAS}}
 
+
+
+% the copyright notice 
+\providecommand{\printcopyright}{}
+\newcommand{\copyrightnotice}[1]{\renewcommand{\printcopyright}{#1}}
+
+
 %Elimina a numeração de página
-\pagestyle{empty}
+\pagestyle{empty}%
+
+
+% redefinition of the plain style:
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyfoot[L]{ \printcopyright}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}}
+
+
 
 %Espaçamento entre paragrafos
 \setlength{\parskip}{0pt}
@@ -220,12 +239,16 @@
 \renewcommand\citeleft{}
 \renewcommand\citeright{}
 
+
+
 \AtBeginDocument{
 
 	
 }
 
-
+\makeatletter
+\g@addto@macro\maketitle{\thispagestyle{plain}}  
+\makeatother
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% End of IEEEtran.cls  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
