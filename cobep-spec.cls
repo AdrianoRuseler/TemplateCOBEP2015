@@ -28,19 +28,18 @@
 %%
 %%*******************************************************************
 
-
 \ProvidesClass{cobep-spec}[2015/05/12 V1.0]
 %\typeout{-- See the "IEEEtran_HOWTO" manual for usage information.}
 %\typeout{-- http://www.michaelshell.org/tex/ieeetran/}
 \NeedsTeXFormat{LaTeX2e}
 
 \LoadClass[10pt,twocolumn]{article}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
 
 \RequirePackage{ifthen}
 \RequirePackage{setspace}
 \RequirePackage{fancyhdr}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
 \RequirePackage{graphicx}
 \RequirePackage{float}
 \RequirePackage{subfigure}
