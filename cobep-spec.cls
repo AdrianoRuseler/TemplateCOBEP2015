@@ -65,7 +65,7 @@
 
 %*******************************************************************
 \RequirePackage{datetime}
-
+\RequirePackage{layouts} % View the layout of a document
 
 
 %*******************************************************************
@@ -239,6 +239,31 @@
 \renewcommand\citeright{}
 
 
+% Comandos auxiliares
+ \newcommand{\showfont}{%
+   encoding: \f@encoding{},
+   family: \f@family{},
+   series: \f@series{},
+   shape: \f@shape{},
+   size: \f@size{},
+baseline: \f@baselineskip{}
+%tfsize: \tf@size{},
+%sfsize: \sf@size{},
+%sssize: \ssf@size{}
+ }
+
+% Comandos auxiliares
+ \newcommand{\justshowfont}{%
+    \f@encoding{},
+    \f@family{},
+    \f@series{},
+    \f@shape{},
+    \f@size{},
+ \f@baselineskip{}
+%tfsize: \tf@size{},
+%sfsize: \sf@size{},
+%sssize: \ssf@size{}
+ }
 
 \AtBeginDocument{
 
